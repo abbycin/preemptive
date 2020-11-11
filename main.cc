@@ -248,7 +248,6 @@ private:
     // if queue_ is empty, it never goes here
     // here we switch to next subroutine
     Context* next = queue_.front();
-    if(next->running()) { return; }
     if(queue_.size() == 1) { Context::context_switch(&empty_, next); }
     queue_.pop_front();
     Context* prev = queue_.back();
