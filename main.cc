@@ -170,7 +170,7 @@ private:
   std::list<Context*> stopped_{};
   timer_t timer_{};
 
-  timer_t* timer() { return &timer_; }
+  timer_t& timer() { return timer_; }
 
   static void sched(int) //, siginfo_t*, void*)
   {
